@@ -30,11 +30,11 @@ $sitename = $app->get('sitename');
 
 if ($task === 'edit' || $layout === 'form')
 {
-    $fullWidth = 1;
+	$fullWidth = 1;
 }
 else
 {
-    $fullWidth = 0;
+	$fullWidth = 0;
 }
 
 // Add JavaScript Frameworks
@@ -61,8 +61,8 @@ JHtml::_('stylesheet', 'style.css', array('version' => 'auto', 'relative' => tru
 // Use of Google Font
 if ($this->params->get('googleFont'))
 {
-    JHtml::_('stylesheet', 'https://fonts.googleapis.com/css?family=' . $this->params->get('googleFontName'));
-    $this->addStyleDeclaration("
+	JHtml::_('stylesheet', 'https://fonts.googleapis.com/css?family=' . $this->params->get('googleFontName'));
+	$this->addStyleDeclaration("
 	h1, h2, h3, h4, h5, h6, .site-title {
 		font-family: '" . str_replace('+', ' ', $this->params->get('googleFontName')) . "', sans-serif;
 	}");
@@ -71,7 +71,7 @@ if ($this->params->get('googleFont'))
 // Template color
 if ($this->params->get('templateColor'))
 {
-    $this->addStyleDeclaration('
+	$this->addStyleDeclaration('
 	a {
 		color: ' . $this->params->get('templateColor') . ';
 	}
@@ -102,36 +102,36 @@ $position8ModuleCount = $this->countModules('position-8');
 
 if ($position7ModuleCount && $position8ModuleCount)
 {
-    $span = 'span6';
+	$span = 'span6';
 }
 elseif ($position7ModuleCount && !$position8ModuleCount)
 {
-    $span = 'span9';
+	$span = 'span9';
 }
 elseif (!$position7ModuleCount && $position8ModuleCount)
 {
-    $span = 'span9';
+	$span = 'span9';
 }
 else
 {
-    $span = 'span12';
+	$span = 'span12';
 }
 
 // Logo file or site title param
 if ($this->params->get('logoFile'))
 {
-    $logo = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" />';
+	$logo = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" />';
 }
 elseif ($this->params->get('sitetitle'))
 {
-    $logo = '<span class="site-title" title="' . $sitename . '">' . htmlspecialchars($this->params->get('sitetitle'), ENT_COMPAT, 'UTF-8') . '</span>';
+	$logo = '<span class="site-title" title="' . $sitename . '">' . htmlspecialchars($this->params->get('sitetitle'), ENT_COMPAT, 'UTF-8') . '</span>';
 }
 else
 {
-    $logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
+	$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
 }
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head><link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <meta charset="utf-8">
@@ -161,7 +161,7 @@ else
     <script type='text/javascript' src='http://kamni/templates/protostar/js/calendar.packed.js'></script>
 
     <script type='text/javascript'>/*<![CDATA[*/
-        widgets.addOnloadEvent(function() {
+            widgets.addOnloadEvent(function() {
             if (typeof jQuery == 'undefined') {
                 var s = document.createElement('script');
                 s.type = 'text/javascript';
@@ -171,18 +171,16 @@ else
         });
         /*]]>*/
     </script>
-<!--    <link rel="icon" href="http://kamni/templates/protostar/favicon.ico?1527570649" type="image/x-icon">-->
+    <link rel="icon" href="http://kamni/templates/protostar/favicon.ico?1527570649" type="image/x-icon">
 
 
 
 
 
-    <link rel="stylesheet" type="text/css" href="http://kamni/templates/protostar/css/theme.less.css"><script type="text/javascript" src="js/printme.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://kamni/templates/protostar/css/theme.less.css"><script type="text/javascript" src="http://kamni/templates/protostar/js/printme.js"></script>
     <script type="text/javascript" src="http://kamni/templates/protostar/js/tpl.js"></script>
     <script type="text/javascript" src="http://kamni/templates/protostar/js/baron.min.js"></script>
     <script type="text/javascript" src="http://kamni/templates/protostar/js/shop2.2_new.js"></script>
-    <!--<script type="text/javascript">shop2.init({"productRefs": [],"apiHash": {"getSearchMatches":"85d5c9343232203e2ed5ce113feb7d27","getFolderMeta":"96e19df790e3ff1b73fbe7c64872849d","getFolderCustomFields":"b3441b6cb523744488f8539f84edc386","getProductListItem":"9954a661d95374bc214b8477c50582af","cart":"afb92eb8b0d10db4c8a98fde3abbaf23","cartAddItem":"58781bbe8ecccebbd0f09907485b80a4","cartRemoveItem":"f98a1ec05e00356b3324cf829ba93f2c","cartUpdate":"9bdcfae7309568b976620ab7b4309a94","cartRemoveCoupon":"ccc59766f2dab886387638f4cba403e1","cartAddCoupon":"9e14b9e08074ab6632b8e89d3b5f457b","deliveryCalc":"3f168ff7d32a16fb3b77c6afa0a25972","print":"0199c36c91e31668546ef6547938440b","printOrder":"d048a13bec9d71dc3adde732e451d3a7","cancelOrder":"be20773229ed1eb6479389648d5f642f","repeatOrder":"a96f15e1e9b7ee3405a82eb4cb48c198","tags":"72a2c36c8a73c27a9e99339510e5defa","refs":"0a8376130b0225e404326076c15885da","compare":"c2a169b160433a94af413a7ffe4c4b7c","folderSearch":"f8af30df01291426f85f2bb172f47520","getFolderVendors":"6b6375eb6a11763003db51a6e6d27b9b"},"verId": 1709126,"mode": "main","step": "","uri": "/shop","IMAGES_DIR": "/d/1709126/d/","my": {"list_picture_enlarge":true,"accessory":"\u0410\u043a\u0441\u0441\u0435\u0441\u0441\u0443\u0430\u0440\u044b","kit":"\u041d\u0430\u0431\u043e\u0440","recommend":"\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0435","similar":"\u041f\u043e\u0445\u043e\u0436\u0438\u0435","modification":"\u041c\u043e\u0434\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438","unique_values":true,"price_fa_rouble":true,"small_images_width":"120"}});</script>-->
-    <!--<style type="text/css">.product-item-thumb {width: 180px;}.product-item-thumb .product-image, .product-item-simple .product-image {height: 160px;width: 180px;}.product-item-thumb .product-amount .amount-title {width: 84px;}.product-item-thumb .product-price {width: 130px;}.shop2-product .product-side-l {width: 180px;}.shop2-product .product-image {height: 160px;width: 180px;}.shop2-product .product-thumbnails li {width: 50px;height: 50px;}</style>-->
 
     <link rel="stylesheet" href="http://kamni/templates/protostar/css/theme.scss.css">
 
@@ -210,13 +208,8 @@ else
             $.s3Shop2Popup();
         });
     </script>
+    <jdoc:include type="head" />
 
-
-
-    <style>
-
-        .product-thumb .product-top .shop-product-options {padding: 0; margin: 5px 0; border: none;}
-    </style>
 
 </head>
 <body>
@@ -234,24 +227,10 @@ else
                     <div class="block-body for_wa_slide">
                         <div class="for_wo cab_title">Вход в кабинет</div>
                         <div class="for_wo">
-                            <form method="post" action="/user">
-                                <input type="hidden" name="mode" value="login" />
-                                <div class="row">
-                                    <label class="row_title" for="login">Логин или e-mail:</label>
-                                    <label class="field text"><input type="text" name="login" tabindex="1" value="" /></label>
-                                </div>
-                                <div class="row">
-                                    <label class="row_title" for="password">Пароль:</label>
-                                    <label class="field password"><input type="password" name="password" tabindex="2" value="" /></label>
-                                </div>
-                                <a href="/user/forgot_password">Забыли пароль?</a>
-                                <div class="row_button">
-                                    <button type="submit" class="signin-btn" tabindex="3">Войти</button>
-                                </div>
-                            </form>
+                            <jdoc:include type="modules" name="top-login-form" style="none" />
                             <div class="clear-container"></div>
                             <div class="reg_link-wrap">
-                                <a href="/user/register" class="register">Регистрация</a>
+                                <a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">Регистрация</a>
                             </div>
                         </div>
                     </div>
@@ -260,43 +239,10 @@ else
             </div>
         </div>    </div>
     <div class="categories-wrap_mobile">
-        <ul class="categories_mobile">
-            <li class="categories_title">Каталог товаров</li>
-            <li ><a href="/shop/folder/kamni-naturalnyye">Камни натуральные на развес</a>
-            </li>
-            <li ><a href="/shop/folder/naturalnyye-kamni-poshtuchno">Натуральные камни поштучно</a>
-            </li>
-            <li ><a href="/shop/folder/yaytsa-iz-nefrita">Яйца из нефрита</a>
-            </li>
-            <li ><a href="/shop/folder/ukrasheniya-iz-naturalnogo-kamnya">Украшения из натурального камня</a>
-            </li>
-            <li ><a href="/shop/folder/runy">Руны по виду камня</a>
-            </li>
-            <li ><a href="/shop/folder/kameshki-dlya-izucheniya-sanskrita">Камешки для изучения санскрита</a>
-            </li>
-            <li ><a href="/shop/folder/motiviruyushchiye-kameshki">Мотивирующие камешки</a>
-            </li>
-            <li ><a href="/shop/folder/avtorskiye-izdeliya-iz-dereva">Авторские изделия из дерева</a>
-            </li>
-            <li ><a href="/shop/folder/avtorskiye-nabory-dlya-gadaniya">Авторские наборы для гадания</a>
-            </li>
-        </ul>
+        <jdoc:include type="modules" name="shoping-category" style="none"/>
     </div>
-    <ul class="top-menu_mobile">
-        <li><a href="/" >Главная</a></li>
-        <li><a href="/novosti" >Новости</a></li>
-        <li><a href="/dostavka" >Контакты и доставка</a></li>
-        <li><a href="/karta-sayta" >Карта сайта</a></li>
-        <li><a href="/search" >Поиск по сайту</a></li>
-        <li><a href="/user" >Регистрация</a></li>
-        <li><a href="/otziv" >Отзывы</a></li>
-        <li><a href="/sotrudnichestvo" >Сотрудничество</a></li>
-    </ul>
-    <ul class="left-menu_mobile">
-        <li><a href="/stati" >Статьи</a></li>
-        <li><a href="/uslugi" >Услуги</a></li>
-        <li><a href="/master-klassy" >Мастер-классы</a></li>
-    </ul>
+    <jdoc:include type="modules" name="top-menu-mob" style="none" />
+    <jdoc:include type="modules" name="menu-sidebar-mob" style="none"/>
     <div class="mobile-panel-button--close"></div>
 </div>
 <div class="mobile-left-panel-filter">
@@ -442,9 +388,9 @@ else
                         <div class="close_button"></div>
 
                         <div class="block-body">
-                            <div class="empty_cart_title">Корзина пуста</div>
-                            <a href="/shop/cart" class="link_to_cart">Оформить заказ</a>
-                            <a href="/shop/cart" class="link_to_cart_mobile"></a>
+                            <div class="empty_cart_title">
+                                <jdoc:include type="modules" name="shoping-cart" style="none"/>
+                            </div>
                         </div>
 
                     </div>
@@ -472,16 +418,7 @@ else
                 </div>
             </div>
             <div class="max-width-wrapper">
-                <ul class="top-menu">
-                    <li><a href="/" >Главная</a></li>
-                    <li><a href="/novosti" >Новости</a></li>
-                    <li><a href="/dostavka" >Контакты и доставка</a></li>
-                    <li><a href="/karta-sayta" >Карта сайта</a></li>
-                    <li><a href="/search" >Поиск по сайту</a></li>
-                    <li><a href="/user" >Регистрация</a></li>
-                    <li><a href="/otziv" >Отзывы</a></li>
-                    <li><a href="/sotrudnichestvo" >Сотрудничество</a></li>
-                </ul>
+                <jdoc:include type="modules" name="top-menu" style="none" />
 
                 <div class="site_login_wrap">
                     <div class="shop2-block login-form ">
@@ -494,24 +431,10 @@ else
                                 <div class="block-body for_wa_slide">
                                     <div class="for_wo cab_title">Вход в кабинет</div>
                                     <div class="for_wo">
-                                        <form method="post" action="/user">
-                                            <input type="hidden" name="mode" value="login" />
-                                            <div class="row">
-                                                <label class="row_title" for="login">Логин или e-mail:</label>
-                                                <label class="field text"><input type="text" name="login" tabindex="1" value="" /></label>
-                                            </div>
-                                            <div class="row">
-                                                <label class="row_title" for="password">Пароль:</label>
-                                                <label class="field password"><input type="password" name="password" tabindex="2" value="" /></label>
-                                            </div>
-                                            <a href="/user/forgot_password">Забыли пароль?</a>
-                                            <div class="row_button">
-                                                <button type="submit" class="signin-btn" tabindex="3">Войти</button>
-                                            </div>
-                                        </form>
+                                        <jdoc:include type="modules" name="top-login-form" style="none" />
                                         <div class="clear-container"></div>
                                         <div class="reg_link-wrap">
-                                            <a href="/user/register" class="register">Регистрация</a>
+                                            <a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">Регистрация</a>
                                         </div>
                                     </div>
                                 </div>
@@ -523,11 +446,18 @@ else
         </div>
         <div class="max-width-wrapper">
             <div class="company-name-wrap ">
-                <div class="logo-pic"><img src="/d/1709126/d/logo_0.png" alt="Дыхание камня"></div>
+                <div class="logo-pic"><?php echo $logo; ?></div>
                 <div class="logo-text-wrap">
                     <div class="logo-text">
-                        <div class="company_name">Дыхание камня</div>
-                        <div class="logo-desc">Натуральные камни. Руны</div>                	</div>
+                        <div class="company_name">
+                            <?php echo JFactory::getApplication()->getCfg('sitename');?>
+                        </div>
+                        <div class="logo-desc">
+                            <?php if ($this->params->get('sitedescription')) : ?>
+                                <?php echo htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8'); ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="right-header-area">
@@ -540,9 +470,9 @@ else
                         <div class="close_button"></div>
 
                         <div class="block-body">
-                            <div class="empty_cart_title">Корзина пуста</div>
-                            <a href="/shop/cart" class="link_to_cart">Оформить заказ</a>
-                            <a href="/shop/cart" class="link_to_cart_mobile"></a>
+                            <div class="empty_cart_title">
+                                <jdoc:include type="modules" name="shoping-cart" style="none"/>
+                            </div>
                         </div>
 
                     </div>
@@ -555,13 +485,8 @@ else
             <div class="content">
                 <div class="content-inner">
                     <div class="shop-search-panel">
-                        <form class="search-products-lite" action="/shop/search" enctype="multipart/form-data">
-                            <input type="text" placeholder="Поиск товаров" autocomplete="off" name="s[name]" value="">
-                            <button class="push_to_search" type="submit"></button>
-                        </form>
+                        <jdoc:include type="modules" name="shop-search" style="none"/>
                         <div class="search-products-basic">
-
-
                             <div class="shop2-block search-form ">
                                 <div class="block-title">
                                     <div class="title">Расширенный поиск</div>
@@ -681,23 +606,20 @@ else
                                     </form>
                                     <div class="clear-container"></div>
                                 </div>
-                            </div><!-- Search Form -->                        </div>
+                            </div><!-- Search Form -->
+                        </div>
                     </div>
                     <div class="slider-wrap">
-                        <ul class="slider">
-                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-rozovogo-kvartsa-svetlyye"><img src="/thumb/MY6frZqcviIxciVOC-k7vw/676c357/1709126/img_9451.jpg" alt="руны из розового кварца"></a></li>
-                            <li><a href="http://dyhanie-kamnya.ru/shop/product/galtovka-assorti-100-gramm"><img src="/thumb/LEMgmFXK9iL7hgjiHrFaWA/676c357/1709126/sl2.jpg" alt="галтовка ассорти 100 грамм"></a></li>
-                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-khrustalya-okrasheny-krasnym"><img src="/thumb/MuuCIeV_G9iZVIqNgSC6SQ/676c357/1709126/mg_0639.jpg" alt="руны из хрусталя"></a></li>
-                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-kakholonga-2-3-2-8-sm"><img src="/thumb/-q_YfUWIj3Eh04o_ult_TQ/676c357/1709126/img_9471.jpg" alt="руны из кахалонга"></a></li>
-                            <li><a href="http://dyhanie-kamnya.ru/shop/product/krupnyye-runy-iz-zheltogo-oniksa-2-5-2-8-sm"><img src="/thumb/3Vhg4iFf0WE3vP5NSJjZ9g/676c357/1709126/mg_0139.jpg" alt="руны из оникса"></a></li>
-                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-chernogo-obsidiana-1-1-5-sm-v-zolotom-variante"><img src="/thumb/-WJTjYXUn3SAkBqEioWbdQ/676c357/1709126/img_9468.jpg" alt="руны из черного обсидиана"></a></li>
-                        </ul>
+<!--                        <ul class="slider">-->
+<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-rozovogo-kvartsa-svetlyye"><img src="/thumb/MY6frZqcviIxciVOC-k7vw/676c357/1709126/img_9451.jpg" alt="руны из розового кварца"></a></li>-->
+<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/galtovka-assorti-100-gramm"><img src="/thumb/LEMgmFXK9iL7hgjiHrFaWA/676c357/1709126/sl2.jpg" alt="галтовка ассорти 100 грамм"></a></li>-->
+<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-khrustalya-okrasheny-krasnym"><img src="/thumb/MuuCIeV_G9iZVIqNgSC6SQ/676c357/1709126/mg_0639.jpg" alt="руны из хрусталя"></a></li>-->
+<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-kakholonga-2-3-2-8-sm"><img src="/thumb/-q_YfUWIj3Eh04o_ult_TQ/676c357/1709126/img_9471.jpg" alt="руны из кахалонга"></a></li>-->
+<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/krupnyye-runy-iz-zheltogo-oniksa-2-5-2-8-sm"><img src="/thumb/3Vhg4iFf0WE3vP5NSJjZ9g/676c357/1709126/mg_0139.jpg" alt="руны из оникса"></a></li>-->
+<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-chernogo-obsidiana-1-1-5-sm-v-zolotom-variante"><img src="/thumb/-WJTjYXUn3SAkBqEioWbdQ/676c357/1709126/img_9468.jpg" alt="руны из черного обсидиана"></a></li>-->
+<!--                        </ul>-->
                     </div>
                     <div class="content_area  " >
-
-
-
-
                         <style>
                             .shop-pricelist .shop-product-amount input[type=text], .product-amount .shop-product-amount input[type=text] {
                                 display: inline-block;
@@ -707,7 +629,6 @@ else
                                 font-size: 14px;
                                 color: #484848;
                                 background: none;
-                                font-family: 'roboto-r';
                                 border: none;
                                 border-bottom: 1px solid #b2b2b2;
                                 margin: 0 6px;
@@ -715,31 +636,7 @@ else
                                 text-align: center;
                             }
                         </style>
-
-
-
-
-
-
-                        <div class="shop-main-before">
-                            <p>Дыхание камня - это мой маленький мир в котором живут прекрасные маленькие каменные тролли. В котором камни - это самые медленные домашние питомцы, каждый из которых имеет свой характер и предпочтения.&nbsp;</p>
-                            <p>И я очень хочу чтобы вы нашли здесь кусочек волшебства для себя, чтобы стали более сильными, нежными, проявленными... любящими.</p>
-                            <p>&nbsp;</p>
-                            <p><a href="/shop/folder/ukrasheniya-iz-naturalnogo-kamnya"><img class="mce-s3-button" src="/d/1709126/d/buttons/2383015.png" /></a>&nbsp;</p>
-                            <p>&nbsp;<a href="/shop/folder/runy"><img class="mce-s3-button" src="/d/1709126/d/buttons/2383215.png" /></a>&nbsp;</p>
-                            <p>&nbsp;<a href="/shop/folder/yaytsa-iz-nefrita"><img class="mce-s3-button" src="/d/1709126/d/buttons/2382615.png" /></a></p>
-                            <p><a href="/shop/folder/kamni-naturalnyye"><img class="mce-s3-button" src="/d/1709126/d/buttons/2382815.png" /></a></p>
-                            <p>&nbsp;</p>
-                        </div>
-
-
-
-
-
-
-
-
-
+                        <jdoc:include type="component" />
                     </div>
                 </div> <!-- .content-inner -->
             </div> <!-- .content -->
@@ -747,41 +644,14 @@ else
         <aside role="complementary" class="sidebar left">
             <div class="shop-categories-wrap ">
                 <div class="title">Каталог товаров</div>
-                <ul class="shop-categories">
-                    <li ><a href="/shop/folder/kamni-naturalnyye">Камни натуральные на развес</a>
-                    </li>
-                    <li ><a href="/shop/folder/naturalnyye-kamni-poshtuchno">Натуральные камни поштучно</a>
-                    </li>
-                    <li ><a href="/shop/folder/yaytsa-iz-nefrita">Яйца из нефрита</a>
-                    </li>
-                    <li ><a href="/shop/folder/ukrasheniya-iz-naturalnogo-kamnya">Украшения из натурального камня</a>
-                    </li>
-                    <li ><a href="/shop/folder/runy">Руны по виду камня</a>
-                    </li>
-                    <li ><a href="/shop/folder/kameshki-dlya-izucheniya-sanskrita">Камешки для изучения санскрита</a>
-                    </li>
-                    <li ><a href="/shop/folder/motiviruyushchiye-kameshki">Мотивирующие камешки</a>
-                    </li>
-                    <li ><a href="/shop/folder/avtorskiye-izdeliya-iz-dereva">Авторские изделия из дерева</a>
-                    </li>
-                    <li ><a href="/shop/folder/avtorskiye-nabory-dlya-gadaniya">Авторские наборы для гадания</a>
-                    </li></ul>
-                </ul>
+                <jdoc:include type="modules" name="shoping-category" style="none"/>
             </div>
-            <ul class="left-menu"><li><a href="/stati" >Статьи</a></li><li><a href="/uslugi" >Услуги</a></li><li><a href="/master-klassy" >Мастер-классы</a></li></ul>                    </aside> <!-- .sidebar-left -->
+            <jdoc:include type="modules" name="menu-sidebar" style="none" />
+        </aside> <!-- .sidebar-left -->
     </div> <!-- .content-wrapper -->
-    <footer role="contentinfo" class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="max-width-wrapper">
-            <ul class="footer-menu">
-                <li><a href="/" >Главная</a></li>
-                <li><a href="/novosti" >Новости</a></li>
-                <li><a href="/dostavka" >Контакты и доставка</a></li>
-                <li><a href="/karta-sayta" >Карта сайта</a></li>
-                <li><a href="/search" >Поиск по сайту</a></li>
-                <li><a href="/user" >Регистрация</a></li>
-                <li><a href="/otziv" >Отзывы</a></li>
-                <li><a href="/sotrudnichestvo" >Сотрудничество</a></li>
-            </ul>
+            <jdoc:include type="modules" name="top-menu" style="none" />
             <div class="footer-contacts-wrap">
                 <div class="phones">Телефон:
                     <div class="phones__inner">
@@ -797,83 +667,22 @@ else
             <div class="footer-right-side">
                 <div class="social-networks">
                     <div class="title">Мы в соц. сетях</div>
-                    <a href="https://www.instagram.com/dyhanie_kamnya/" target="_blank"><img src="/d/1709126/d/mg_0193.jpg" alt="instagram"></a>
+                    <a href="https://www.instagram.com/dyhanie_kamnya/" target="_blank">
+                        <?php echo '<img src="' . JUri::root() . 'images/mg_0193.jpg" alt="instagram">'; ?>
+                    </a>
                     <a href="https://www.facebook.com/groups/1839191606396653/" target="_blank"><img src="/d/1709126/d/" alt="facebook"></a>
                     <a href="https://vk.com/dyhanie_kamnya" target="_blank"><img src="/d/1709126/d/" alt="vk"></a>
                 </div>
 
-                <div class="site-name">&copy; 2017 - 2018 </div>
+                <div class="site-name">© 2017 - 2018 </div>
             </div>
         </div>
         <div class="footer-bottom-area">
             <div class="max-width-wrapper">
-                <div class="site-copyright"><span style='font-size:10px;' class='copyright'><!--noindex--><a href="https://megagroup.ru" target="_blank" rel="nofollow"><img src="http://cp1.megagroup.ru/g/mlogo/svg/sozdanie-saitov-megagroup-ru-dark.svg" class="copyright"></a><!--/noindex--></span></div>
-                <div class="counters"><!-- Yandex.Metrika counter -->
-                    <script type="text/javascript">
-                        (function (d, w, c) {
-                            (w[c] = w[c] || []).push(function() {
-                                try {
-                                    w.yaCounter45207837 = new Ya.Metrika({
-                                        id:45207837,
-                                        clickmap:true,
-                                        trackLinks:true,
-                                        accurateTrackBounce:true,
-                                        webvisor:true
-                                    });
-                                } catch(e) { }
-                            });
-
-                            var n = d.getElementsByTagName("script")[0],
-                                s = d.createElement("script"),
-                                f = function () { n.parentNode.insertBefore(s, n); };
-                            s.type = "text/javascript";
-                            s.async = true;
-                            s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-                            if (w.opera == "[object Opera]") {
-                                d.addEventListener("DOMContentLoaded", f, false);
-                            } else { f(); }
-                        })(document, window, "yandex_metrika_callbacks");
-                    </script>
-                    <noscript><div><img src="https://mc.yandex.ru/watch/45207837" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-                    <!-- /Yandex.Metrika counter -->
-
-                    <script>
-                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                        ga('create', 'UA-102050547-1', 'auto');
-                        ga('send', 'pageview');
-
-                    </script>
-
-                    <!--LiveInternet counter--><script type="text/javascript">
-                        document.write("<a href='//www.liveinternet.ru/click' "+
-                            "target=_blank><img src='//counter.yadro.ru/hit?t12.4;r"+
-                            escape(document.referrer)+((typeof(screen)=="undefined")?"":
-                                ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-                                screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-                            ";"+Math.random()+
-                            "' alt='' title='LiveInternet: показано число просмотров за 24"+
-                            " часа, посетителей за 24 часа и за сегодня' "+
-                            "border='0' width='88' height='31'><\/a>")
-                    </script><!--/LiveInternet--><!--cms statistics-->
-                    <script type="text/javascript"><!--
-                        var megacounter_key="c415392a7ca2ab24515f282b533029b9";
-                        (function(d){
-                            var s = d.createElement("script");
-                            s.src = "//counter.megagroup.ru/loader.js?"+new Date().getTime();
-                            s.async = true;
-                            d.getElementsByTagName("head")[0].appendChild(s);
-                        })(document);
-                        //--></script>
-                    <!--/cms statistics-->
-                    <!--__INFO2018-05-29 10:10:49INFO__-->
-                </div>            </div>
+                <div class="site-copyright"><span style="font-size:10px;" class="copyright"><!--noindex--><a href="https://megagroup.ru" target="_blank" rel="nofollow"><img src="http://cp1.megagroup.ru/g/mlogo/svg/sozdanie-saitov-megagroup-ru-dark.svg" class="copyright"></a><!--/noindex--></span></div>
+            </div>
         </div>
-    </footer><!-- .footer -->
+    </footer>
 </div> <!-- .site-wrapper -->
 <script src="http://kamni/templates/protostar/js/splitwords.js"></script>
 
