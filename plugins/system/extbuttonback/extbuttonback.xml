@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>System - EXT Button Back</name>
+	<author>Ext-Joom.com</author>
+	<creationDate>04/11/2013</creationDate>
+	<copyright>Copyright (C) 2011-2013 Ext-Joom.com. All Rights Reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>extjoom@gmail.com</authorEmail>
+	<authoralt>http://www.ext-joom.com/</authoralt>
+	<version>1.0</version>
+	<description>The plugin displays the back button on your site</description>
+
+	<scriptfile>script.php</scriptfile>
+	
+	<files>
+		<filename plugin="extbuttonback">extbuttonback.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+	</files>	
+	
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_extbuttonback.ini</language>
+		<language tag="en-GB">en-GB.plg_system_extbuttonback.sys.ini</language>		
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">		
+
+				<field 
+					name="ext_class" 
+					type="text"
+					default="" 
+					label="PLG_SYSTEM_EXTBUTTONBACK_FIELD_EXT_CLASS_LABEL" 
+					description="PLG_SYSTEM_EXTBUTTONBACK_FIELD_EXT_CLASS_DESC" />
+					
+				<field 
+					name="ext_value" 
+					type="text"
+					filter="raw" 
+					default="" 
+					label="PLG_SYSTEM_EXTBUTTONBACK_FIELD_EXT_VALUE_LABEL" 
+					description="PLG_SYSTEM_EXTBUTTONBACK_FIELD_EXT_VALUE_DESC" />
+				
+				<field 
+					name="ext_home" 
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="PLG_SYSTEM_EXTBUTTONBACK_FIELD_EXT_HOME_LABEL"
+					description="PLG_SYSTEM_EXTBUTTONBACK_FIELD_EXT_HOME_DESC"
+					filter="int">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+					
+			</fieldset>
+		</fields>
+	</config>
+</extension>

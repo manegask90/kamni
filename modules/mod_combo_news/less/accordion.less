@@ -1,0 +1,31 @@
+/* ==== ACCORDION ==== */
+.accordion.newsflash { 
+  .in {
+    padding-bottom: 7px;
+    .accordion-inner {
+      border-top-color: @accordBorderColor;
+      padding: @accordContentPadding;
+      overflow: hidden;
+    }
+  }
+  .accordion-group {
+    border-color: @accordBorderColor;
+    background: @accordBackground; 
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+  .accordion-heading {
+    position: relative;
+    background: @accordHeadingBackground;
+    .modnews-date {
+      position: absolute;
+      top: 8px;
+      right: 15px;
+    }
+  }
+  .modnews-date {margin-bottom: 5px;}
+  .news-image.pull-left,&.pull-right{
+    max-width: @accordSideImageMaxWidth;
+  }
+}

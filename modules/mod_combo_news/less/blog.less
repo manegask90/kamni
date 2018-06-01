@@ -1,0 +1,42 @@
+/* ======== BLOG ========= */
+.table-span() {
+  article:not([class*="span"]) {padding: @blogArticlePadding;}
+  .row-fluid [class*="span"] {
+    display:table-cell;
+    float:none;
+    margin:0;
+    padding:@blogArticlePadding;
+    &.last-article {
+      display:block;
+    }
+  }
+  .row-fluid .span6 {width:50%;}
+  .row-fluid .span4 {width:33.333%;}
+  .row-fluid .span3 {width:25%;}
+}
+
+.newsflash-blog {
+  .table-span;
+}
+
+.newsflash-blog article {
+  .news-image.pull-left,&.pull-right{
+    max-width: @blogSideImageMaxWidth;
+  }
+  p {display: inline;}
+  .readmore {padding: @blogReadmorePadding 0;}
+  .newsflash-title {
+    // vertical-align: bottom;
+    display: table-cell;
+    margin: 0;
+    font-size: @blogTitleFontSize;
+    height:  @blogTitleFontSize * @blogTitleStringCount;
+    color: @blogTitleColor;
+    a {
+      color: @blogTitleLinkColor;
+      &:hover {
+        color: @blogTitleLinkHover;
+      }
+    }
+  }
+}

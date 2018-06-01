@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0.0" client="site" method="upgrade">
+	<name>MJ Simple News</name>
+	<creationDate>November 2013</creationDate>
+	<author>MicroJoom</author>
+	<copyright>Copyright (c) 2013 MicroJoom</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@microjoom.com</authorEmail>
+	<authorUrl>http://www.microjoom.com</authorUrl>
+	<version>1.0.0</version>
+	<description>MJ_DESCRIPTION</description>
+	<files>
+		<filename module="mod_mj_simple_news">mod_mj_simple_news.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>helpers</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages />
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_mj_simple_news/helpers/fields">
+			<fieldset name="basic" >
+				<field name="link_target" type="list" default="_self" label="Способ открытия ссылки"
+					description="Выберите способ открытия ссылки">
+					<option value="_blank">В новом окне</option>
+					<option value="_self">В этом же окне</option>
+					<option value="_windowopen">Во фрейме</option>
+				</field>
+				<field  type="mjheading" 
+					default="Количество колонок для экранов с разрешением 1200pх и больше"
+				/>
+				<field name="col_lg" type="list" default="1"  label="К-во колонок" description="Укажите количество колонок для экранов с разрешением 1200pх и больше">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+				</field>
+				<field type="mjheading" 
+					default="Количество колонок для устройств с разрешением от 992pх до 1199px"
+				/>
+				<field name="col_md" type="list" default="1" label="К-во колонок" description="Укажите количество колонок для устройств с разрешением от 992pх до 1199px">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+				</field>
+				<field  type="mjheading" 
+					default="Количество колонок для устройств с разрешением от 768px до 991px"
+				/>
+				<field name="col_sm" type="list" default="1" label="К-во колонок" description="Укажите количество колонок для устройств с разрешением от 768px до 991px">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+				</field>
+				<field  type="mjheading" 
+					default="Количество колонок для мобильных устройств с разрешением менее чем 767pх"
+				/>
+				<field name="col_xs" type="list" default="1" label="К-во колонок" description="Укажите количество колонок для мобильных устройств с разрешением менее чем 767pх">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+				</field>
+			</fieldset>
+			<fieldset name="filter_options" label="Параметры фильтра">	
+				<field name="catid" type="category" extension="com_content" multiple="true" size="10" default="" label="Выбор категорий" description="Выберите одну или несколько категорий для вывода контента" />
+				<field name="show_child_category_articles" type="radio" class="btn-group" default="0" label="Использование подкатегорий" description="Использовать подкатегории или нет">
+                    <option value="1">Использовать</option>
+                    <option value="0">Не использовать
+                    </option>
+                </field>  
+                <field name="levels" type="text" default="1" label="Уровень подкатегорий" description="Укажите уровень подкатегорий для включения" />                              
+                <field name="show_front" type="radio" default="show" class="btn-group" label="Избранные материалы" description="Показать или скрыть избранные материалы, или отображать только их">
+                    <option value="show">Показать</option>
+                    <option value="hide">Скрыть</option>
+                    <option value="only">Только избранные</option>
+                </field>
+                <field name="article_ordering" type="list" default="a.title" label="Способ сортировки" description="Выберите предпочтительный способ сортировки выводимых материалов">
+                    <option value="a.ordering">По порядоку менеджера материалов</option>
+                    <option value="fp.ordering">По порядоку избранных материалов</option>
+                    <option value="a.hits">По показам</option>
+                    <option value="a.title">По заголовку</option>
+                    <option value="a.id">По идентификатору (ID)</option>
+                    <option value="a.alias">По алиасу</option>
+                    <option value="a.created">По дате создания</option>
+                    <option value="modified">По дате изменения</option>
+                    <option value="publish_up">По дате начала публикации</option>
+                    <option value="a.publish_down">По дате окончания публикации</option>
+                </field>
+                <field name="article_ordering_direction" type="list" default="ASC" label="Направление сортировки" description="Выберите предпочтительное направление сортировки (по возрастанию или убыванию)">
+                    <option value="DESC">По убыванию</option>
+                    <option value="ASC">По возрастанию</option>
+                </field>
+                <field name="count" type="text" default="12" label="Количество материалов" description="Выберите количество материалов для отображения в модуле" />
+			</fieldset>
+			<fieldset name="display_options" label="Параметры отображения">
+				<field name="title_display" type="radio" default="1" class="btn-group" label="Заголовок" description="Отображать заголовок или нет">
+					<option value="1">Да</option>
+					<option value="0">Нет</option>
+				</field>
+				<field name="item_title_maxlength" type="text" default="25" label="Кол. символов заголовка" description="Укажите максимальное количество символов заголовка (если нужно отобразить весь заголовок - указываем 0)" />
+				<field name="item_desc_display" type="radio" default="1" class="btn-group" label="Описание" description="Отображать описание или нет">
+					<option value="1">Да</option>
+					<option value="0">Нет</option>
+				</field>
+				<field name="item_desc_maxlength" type="text" default="200" label="Кол. символов описания" description="Укажите максимальное количество символов описания (если нужно отобразить все описание - указываем 0)" />
+				<field name="item_hits_display" class="btn-group" type="radio" default="1" label="Количество просмотров" description="Выводить или нет количество просмотров материалов">
+					<option value="1">Да</option>
+					<option value="0">Нет</option>
+				</field>
+				<field name="item_created_display" class="btn-group" type="radio" default="1" label="Дата публикации" description="Выводить или нет дату публикации материалов">
+					<option value="1">Да</option>
+					<option value="0">Нет</option>
+				</field>
+				<field name="item_tag_display" class="btn-group" type="radio" default="0" label="Метки" description="Выводить или нет метки материалов (только для Joomla 3x)">
+					<option value="1">Да</option>
+					<option value="0">Нет</option>
+				</field>
+				<field name="item_readmore_display" class="btn-group" type="radio" default="1" label="Читать далее" description="Выводить или нет ссылку читать далее">
+					<option value="1">Да</option>
+					<option value="0">Нет</option>
+				</field>
+			</fieldset>
+			<fieldset name="image_options" label="Параметры изображения">
+				<field name="imgf_cfg" type="imagesrc"  default="" label="Источник отображаемого изображения">
+					<option value="imgf_image_intro">Интро изображение</option>
+					<option value="imgf_inline_introtext">Из вступительного текста</option>
+					<option value="imgf_inline_fulltext">Из полного текста</option>	
+					<option value="imgf_external">Из внешнего источника</option>
+				</field>
+				
+                <field name="imgf_external_url" type="text" default="images/{id}.jpg" label="Внешний источник" description="Выберите внешний источник для картинки (название картинки по id статьи)"/>
+                <field name="imgf_function" type="list" label="Изменение размера картинки" default="2" description="Выберите метод изменения размера картинки">
+                     <option value="0">Нет</option>
+                     <option value="1">Заполняющий</option>
+                     <option value="2">Внутренний</option>
+                     <option value="3">Внешний</option>
+                     <option value="4">Обрезающий</option>
+					 <option value="5">Обрезающий-2</option>
+                </field>
+                <field name="imgf_width" type="text" default="500" label="Ширина" description="Выберите ширину изображения" />
+                <field name="imgf_height" type="text" default="400" label="Высота" description="Выберите высоту изображения" />
+                <field name="imgf_placeholder" label="Заменяющее изображение" class="btn-group" description="Показать или нет заменяющее изображение, которое будет отображаться в случае, если в материале вообще нет изображений" type="radio" default="1">
+                     <option value="1">Да</option>
+                     <option value="0">Нет</option>
+                </field>
+                <field name="imgf_placeholder_path" type="text" default="modules/mod_mj_simple_news/assets/img/nophoto.png" label="Путь к заменяющему изображению" description="Укажите путь к заменяющему изображению"/>                               
+            </fieldset> 
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="layout" type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="local_jquery" type="radio" default="0" class="btn-group"
+					label="Включить jQuery" description="Включить библиотеку jQuery?" >
+					<option value="1">Да</option>
+					<option value="0">Нет
+					</option>
+				</field>
+				<field name="jquery_lazyload" type="radio" default="1" class="btn-group"
+					label="Включить jQuery Lazyload" description="Включить jQuery Lazyload?" >
+					<option value="1">Да</option>
+					<option value="0">Нет
+					</option>
+				</field>
+				<field name="owncache" type="list" default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+				<field name="cache_time" type="text" default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,68 @@
+@operaBackground: #f1f1f1; // Хак для Opera, цвет зазоров должен совпадать с подложкой
+
+// Вертикальный сепаратор для материалов в линии
+.newsflash-blog.v_separator{
+  .vertical-line;
+}
+// заливка по линиям
+.newsflash-blog.rows-block{
+  .row-bg;
+}
+// заливка по материалам, рамки
+.newsflash-blog.articles-block{
+  .article-rouded;
+} 
+.newsflash-blog.rows-block article:not([class*="span"]),
+.newsflash-blog.rows-block .row-fluid,
+.newsflash-blog.articles-block article,
+.newsflash-blog.monoblock {
+  .blog-bg;
+}
+// Вертикальный сепаратор для материалов в линии
+.vertical-line(){
+  &.monoblock,&.rows-block {
+    .row-fluid {
+      article[class*="span"] + article[class*="span"],.last-article {
+        background-image: @blogVerticalSeparator;
+        background-repeat:no-repeat;
+        background-position: left top;
+        background-size: 1px 100%;
+      }
+      .last-article {
+        background-position: right top;
+      }
+    }
+  }
+}
+// заливка по линиям
+.row-bg() {
+  .row-fluid, article:not([class*="span"]) {
+    margin-bottom:20px;
+  }
+}
+.blog-bg() {
+  background-origin: padding-box;
+  background-image: -moz-linear-gradient(bottom,@blogBackground,@blogBackground);
+  background-image: -webkit-linear-gradient(bottom,@blogBackground,@blogBackground);
+  background-image: -o-linear-gradient(bottom,@blogBackground,@blogBackground);
+  background-image: linear-gradient(to bottom,@blogBackground,@blogBackground);
+  background-repeat: no-repeat;
+}
+// заливка по материалам
+.article-rouded() {
+  article {
+    border: @blogArticleMargin solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0 1px @blogArticleBorderColor;
+    -moz-box-shadow: inset 0 0 1px @blogArticleBorderColor;
+    box-shadow: inset 0 0 1px @blogArticleBorderColor;
+  }
+   // _:-o-prefocus, article { border-color: @operaBackground;} // Хак для Опера
+  .row-fluid article:first-child {border-left:0;}
+  .row-fluid article:last-child {border-right:0;}
+  article:not([class*="span"]) {
+    border-left: 0;
+    border-right: 0;
+  }
+}

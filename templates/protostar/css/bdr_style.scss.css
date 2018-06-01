@@ -1,0 +1,12 @@
+.page-path {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400; }
+  .page-path a span {
+    margin: 0; }
+  .page-path span {
+    color: inherit;
+    font-weight: inherit; }
+
+.shop-categories ul {
+  display: block; }

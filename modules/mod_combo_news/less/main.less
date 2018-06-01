@@ -1,0 +1,28 @@
+/* -------------- Main ------------ */
+.newsflash {
+  margin-bottom: 20px;
+  article {
+    position: relative;
+    overflow:hidden;
+  }
+  .news-image {
+    margin: 0 auto 3px;
+    display: block;
+    text-align: center;
+    overflow: hidden;    
+    a {
+      opacity: 1;
+      transition: all .5s;
+      &:hover {
+        opacity: .85;
+        filter: alpha(opacity=85);
+      }
+    }
+    img {width: 100%;}
+    &.pull-left {margin-right:10px;}
+    &.pull-right {margin-left:10px;}
+    &.center-image {margin-top:0;}
+  }
+  .readmore-left {text-align:left;}
+  .readmore-right {text-align:right;}
+}

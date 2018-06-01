@@ -1,0 +1,107 @@
+/* ----------- Media  --------------- */
+
+.blog-rsp() {
+  &.newsflash-blog {
+    .row-fluid [class*="span"] {
+      display: block;
+      width: 100%;
+    }
+    &.v_separator {
+      &.monoblock,&.rows-block {
+        .row-fluid [class*="span"] {
+          background-image: none !important;
+        }
+      }
+    }
+    &.articles-block .row-fluid article {
+      border-left:0;
+      border-right:0;
+    }
+  }
+}
+.tabs-rsp() {
+  &.newsflash-tabs {  
+    &.top-tabs .nav-tabs>li,
+    &.top-tabs .nav-pills>li,
+    &.top-tabs .mcn-custom .tbs,
+    &[class*="tabs-"] > .nav-tabs, 
+    &[class*="tabs-"] > .mcn-custom {
+      float: none;
+    }
+    &.top-tabs {
+      .nav-tabs>li {
+        border: 1px solid @tabsBorderColor;
+        &:first-child {border-radius: @tabsBorderRadius @tabsBorderRadius 0 0;}
+      }
+      .nav-tabs>li a {
+        margin-right: 0;
+        border-radius: 0;
+        border-bottom:0;
+      }
+      .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {border: 0;}      
+      .mcn-custom .tbs {
+        border-bottom: 1px solid @tabsBorderColor;
+      }  
+    }  
+    &[class*="tabs-"] > .nav-tabs, &[class*="tabs-"] > .mcn-custom {
+      margin-bottom:0;
+      width:100%;
+      max-width:100%;
+    }
+    &.tabs-left,&.tabs-right {
+      .tab-content {border:0;}
+    }  
+  }
+}
+.accordion-rsp() {
+  &.accordion.newsflash .accordion-heading .modnews-date {
+    position: static;
+    padding-left: 15px;
+    margin-bottom: 0;
+  }
+}
+
+// -----------------------------
+
+@media (max-width: 979px){
+/*  All  */
+  
+}
+
+@media (max-width: 979px) {
+  .rsp_979{.blog-rsp;}
+  .rsp_979{.tabs-rsp;}
+  .rsp_979{.accordion-rsp;}
+  .rsp_979[class*="newsflash"] {
+    .center-image.news-image {
+      text-align: left;
+      img {width: auto;}
+    }
+  }
+}
+@media (max-width: 767px){
+  .rsp_767{.blog-rsp;}
+  .rsp_767{.tabs-rsp;}
+  .rsp_767{.accordion-rsp;}
+  .rsp_767[class*="newsflash"] {
+    .center-image.news-image {
+      text-align: left;
+      img {width: auto;}
+    }
+  }
+}
+@media (max-width: 480px){
+  .rsp_480{.blog-rsp;}
+  .rsp_480{.tabs-rsp;}
+  .rsp_480{.accordion-rsp;}
+  [class*="rsp_"][class*="newsflash"] {
+    .center-image.news-image,[class*="pull-"].news-image {
+      float: none;
+      max-width: 100%!important;
+      width: 100%;
+      text-align: center;
+      margin:0;
+      img {width: 100%;}
+    }
+  }
+}
