@@ -212,7 +212,14 @@ else
 
 
 </head>
-<body>
+<body class="site <?php echo $option
+    . ' view-' . $view
+    . ($layout ? ' layout-' . $layout : ' no-layout')
+    . ($task ? ' task-' . $task : ' no-task')
+    . ($itemid ? ' itemid-' . $itemid : '')
+    . ($params->get('fluidContainer') ? ' fluid' : '')
+    . ($this->direction === 'rtl' ? ' rtl' : '');
+?>">
 <div id="site_loader"></div>
 <div class="close-left-panel"></div>
 <div id="menu" class="mobile-left-panel">
@@ -610,14 +617,7 @@ else
                         </div>
                     </div>
                     <div class="slider-wrap">
-<!--                        <ul class="slider">-->
-<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-rozovogo-kvartsa-svetlyye"><img src="/thumb/MY6frZqcviIxciVOC-k7vw/676c357/1709126/img_9451.jpg" alt="руны из розового кварца"></a></li>-->
-<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/galtovka-assorti-100-gramm"><img src="/thumb/LEMgmFXK9iL7hgjiHrFaWA/676c357/1709126/sl2.jpg" alt="галтовка ассорти 100 грамм"></a></li>-->
-<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-khrustalya-okrasheny-krasnym"><img src="/thumb/MuuCIeV_G9iZVIqNgSC6SQ/676c357/1709126/mg_0639.jpg" alt="руны из хрусталя"></a></li>-->
-<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-kakholonga-2-3-2-8-sm"><img src="/thumb/-q_YfUWIj3Eh04o_ult_TQ/676c357/1709126/img_9471.jpg" alt="руны из кахалонга"></a></li>-->
-<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/krupnyye-runy-iz-zheltogo-oniksa-2-5-2-8-sm"><img src="/thumb/3Vhg4iFf0WE3vP5NSJjZ9g/676c357/1709126/mg_0139.jpg" alt="руны из оникса"></a></li>-->
-<!--                            <li><a href="http://dyhanie-kamnya.ru/shop/product/runy-iz-chernogo-obsidiana-1-1-5-sm-v-zolotom-variante"><img src="/thumb/-WJTjYXUn3SAkBqEioWbdQ/676c357/1709126/img_9468.jpg" alt="руны из черного обсидиана"></a></li>-->
-<!--                        </ul>-->
+                        <jdoc:include type="modules" name="slider" style="none"/>
                     </div>
                     <div class="content_area  " >
                         <style>

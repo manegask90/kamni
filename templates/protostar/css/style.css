@@ -436,3 +436,18 @@ p {
 #comments-form .btn:hover , #comments-report-form .btn:hover {
     opacity: 0.9;
 }
+.recent-view {
+    display: none;
+}
+.category-view .virtuemart_search {
+    display: none;
+}
+.slider-wrap {
+    display: none;
+}
+.itemid-101.view-category .slider-wrap {
+    display: none;
+}
+.itemid-101 .slider-wrap {
+    display: block;
+}

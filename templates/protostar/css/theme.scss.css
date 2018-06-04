@@ -333,7 +333,9 @@ td, th {
       width: 100%;
       height: 100%;
       vertical-align: middle;
-      font-size: 12px; }
+      font-size: 12px;
+      max-height: 357px;
+    }
 
 .slider-wrap {
   position: relative;

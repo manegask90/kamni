@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3" client="site" method="upgrade">
+    <name>mod_virtuemart_randcatproduct</name>
+    <creationDate>May 2016</creationDate>
+    <author>borro</author>
+    <authorUrl>http:/siteforhelp.ru</authorUrl>
+	<authorEmail>borro@inbox.ru</authorEmail>
+    <copyright>Copyright (C) 2017 Andrew Zahalski+kenwheeler+artlux+...+borro. All rights reserved.</copyright>
+    <license>GNU/GPL</license>
+    <version>1.4</version>
+    <description>MOD_VIRTUEMART_RANDCATPRODUCT_XML_DESCRIPTION</description>
+    <files>
+		<filename module="mod_virtuemart_randcatproduct">mod_virtuemart_randcatproduct.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+    </files>
+	<languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.mod_virtuemart_randcatproduct.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_virtuemart_randcatproduct.sys.ini</language>
+	</languages>
+    <config>
+		<fields name="params" addfieldpath="/administrator/components/com_virtuemart/fields">
+			<fieldset name="basic">
+				<field
+				  name="virtuemart_category_id"
+				  type="vmcategories"
+				  value_field="category_name"
+				  label="COM_VIRTUEMART_CATEGORY"
+				  description="COM_VIRTUEMART_CATEGORY"
+				/>
+				<field
+				  name="disp_cat_title"
+				  type="radio"
+				  class="btn-group btn-group-yesno"
+				  default="0"
+				  label="MOD_VIRTUEMART_RANDCATPRODUCT_SHOW_CAT_TITLE"
+				  description="MOD_VIRTUEMART_RANDCATPRODUCT_SHOW_CAT_TITLE_DESC">
+					<option value = "0">JNO</option>
+					<option value = "1">JYES</option>
+				</field>
+				<field
+				  name="disp_cat_desc"
+				  type="radio"
+				  class="btn-group btn-group-yesno"
+				  default="0"
+				  label="MOD_VIRTUEMART_RANDCATPRODUCT_SHOW_CAT_DESC"
+				  description="MOD_VIRTUEMART_RANDCATPRODUCT_SHOW_CAT_DESC_DESC">
+					<option value = "0">JNO</option>
+					<option value = "1">JYES</option>
+				</field>
+				
+			</fieldset>
+		</fields>
+    </config>
+</extension>
