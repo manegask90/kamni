@@ -211,7 +211,7 @@ if(!empty($this->orderByList)) { ?>
                         <path d="M-0.001,13.999 C-0.001,13.999 -0.001,7.999 -0.001,7.999 C-0.001,7.999 13.999,7.999 13.999,7.999 C13.999,7.999 13.999,13.999 13.999,13.999 C13.999,13.999 -0.001,13.999 -0.001,13.999 ZM-0.001,-0.001 C-0.001,-0.001 13.999,-0.001 13.999,-0.001 C13.999,-0.001 13.999,5.999 13.999,5.999 C13.999,5.999 -0.001,5.999 -0.001,5.999 C-0.001,5.999 -0.001,-0.001 -0.001,-0.001 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
                     </svg>
                 </a>
-                <a href="#" title="Прайс-лист" data-value="list" class="view_button pricelist ">-->
+                <a href="#" class="view_button pricelist">
                     <svg class="icon_color" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="14"
                          height="14" viewBox="0 0 14 14">
@@ -269,21 +269,43 @@ if(VmConfig::get ('ajax_category', false)){
         jQuery('.view-sorting-dropdown .grid').removeClass('active-view');
         jQuery('.view-sorting-dropdown .list').addClass('active-view');
         jQuery('.category-view .browse-view .product-list').removeClass('grid-view').addClass('list-view');
+        jQuery('.category-view .browse-view .product-list .shop2-product-item').removeClass('product-thumb').addClass('product-simple');
+    } else if (productView == 'pricelist'){
+        jQuery('.view-sorting-dropdown .grid').removeClass('active-view');
+        jQuery('.view-sorting-dropdown .list').removeClass('active-view');
+        jQuery('.view-sorting-dropdown .pricelist').addClass('active-view');
+        jQuery('.category-view .browse-view .product-list').removeClass('grid-view').addClass('list-view');
+        jQuery('.category-view .browse-view .product-list .shop2-product-item').removeClass('product-thumb product-simple').addClass('product-pricelist');
     }
+
     jQuery('.view-sorting-dropdown .grid').click(function(){
         localStorage.removeItem('productView');
         localStorage.setItem('productView', 'grid');
         jQuery('.view-sorting-dropdown .list').removeClass('active-view');
+        jQuery('.view-sorting-dropdown .pricelist').removeClass('active-view');
         jQuery(this).addClass('active-view');
         jQuery('.category-view .browse-view .product-list').removeClass('list-view').addClass('grid-view');
+        jQuery('.category-view .browse-view .product-list .shop2-product-item').removeClass('product-simple product-pricelist').addClass('product-thumb');
         return false;
     });
     jQuery('.view-sorting-dropdown .list').click(function(){
         localStorage.removeItem('productView');
         localStorage.setItem('productView', 'list');
         jQuery('.view-sorting-dropdown .grid').removeClass('active-view');
+        jQuery('.view-sorting-dropdown .pricelist').removeClass('active-view');
         jQuery(this).addClass('active-view');
         jQuery('.category-view .browse-view .product-list').removeClass('grid-view').addClass('list-view');
+        jQuery('.category-view .browse-view .product-list .shop2-product-item').removeClass('product-thumb product-pricelist').addClass('product-simple');
+        return false;
+    });
+    jQuery('.view-sorting-dropdown .pricelist').click(function(){
+        localStorage.removeItem('productView');
+        localStorage.setItem('productView', 'pricelist');
+        jQuery('.view-sorting-dropdown .grid').removeClass('active-view');
+        jQuery('.view-sorting-dropdown .list').removeClass('active-view');
+        jQuery(this).addClass('active-view');
+        jQuery('.category-view .browse-view .product-list').removeClass('grid-view').addClass('list-view');
+        jQuery('.category-view .browse-view .product-list .shop2-product-item').removeClass('product-thumb product-simple').addClass('product-pricelist');
         return false;
     });
 </script>

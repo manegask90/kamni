@@ -46,7 +46,7 @@ foreach ($viewData['products'] as $type => $products ) {
 
         if( (!empty($type) and count($products)>0) or (count($viewData['products'])>1 and count($products)>0)){
             $productTitle = vmText::_('COM_VIRTUEMART_'.strtoupper($type).'_PRODUCT'); ?>
-            <div class="<?php echo $type ?>-view product-list">
+            <div class="<?php echo $type ?>-view product-list grid-view">
             <?php // Start the Output
         }
     }
@@ -97,35 +97,12 @@ foreach ($viewData['products'] as $type => $products ) {
                     </div>
                 </div>
 
-<!--                <div class="vm-product-rating-container">-->
-<!--                    --><?php //echo shopFunctionsF::renderVmSubLayout('rating',array('showRating'=>$showRating, 'product'=>$product));
-//                    if ( VmConfig::get ('display_stock', 1)) { ?>
-<!--                        <span class="vmicon vm2---><?php //echo $product->stock->stock_level ?><!--" title="--><?php //echo $product->stock->stock_tip ?><!--"></span>-->
-<!--                    --><?php //}
-//                    echo shopFunctionsF::renderVmSubLayout('stockhandle',array('product'=>$product));
-//                    ?>
-<!--                </div>-->
-
-
-<!--                <div class="vm-product-descr-container---><?php //echo $rowsHeight[$row]['product_s_desc'] ?><!--">-->
-<!--                    <h2>--><?php //echo JHtml::link ($product->link.$ItemidStr, $product->product_name); ?><!--</h2>-->
-<!--                    --><?php //if(!empty($rowsHeight[$row]['product_s_desc'])){
-//                        ?>
-<!--                        <p class="product_s_desc">-->
-<!--                            --><?php //// Product Short Description
-//                            if (!empty($product->product_s_desc)) {
-//                                echo shopFunctionsF::limitStringByWord ($product->product_s_desc, 60, ' ...') ?>
-<!--                            --><?php //} ?>
-<!--                        </p>-->
-<!--                    --><?php // } ?>
-<!--                </div>-->
-
                 <div class="product-bottom">
                     <?php //echo $rowsHeight[$row]['price'] ?>
-                    <div class="vm3pr-<?php echo $rowsHeight[$row]['price'] ?>"> <?php
-                        echo shopFunctionsF::renderVmSubLayout('prices', array('product' => $product, 'currency' => $currency)); ?>
-                        <div class="clear"></div>
-                    </div>
+<!--                    <div class="vm3pr---><?php //echo $rowsHeight[$row]['price'] ?><!--"> --><?php
+//                        echo shopFunctionsF::renderVmSubLayout('prices', array('product' => $product, 'currency' => $currency)); ?>
+<!--                        <div class="clear"></div>-->
+<!--                    </div>-->
                     <?php //echo $rowsHeight[$row]['customs'] ?>
                     <div class="product-amount1"> <?php
                         echo shopFunctionsF::renderVmSubLayout('addtocart', array('product' => $product, 'rowHeights' => $rowsHeight[$row], 'position' => array('ontop', 'addtocart'))); ?>

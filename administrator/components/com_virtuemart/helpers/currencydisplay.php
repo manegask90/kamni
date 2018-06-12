@@ -351,7 +351,6 @@ class CurrencyDisplay {
                 return '<div class="Price'.$name.$vis.'"><span class="Price'.$name.'">'.$priceFormatted.'</span></div>';
             }
         }
-        var_dump($product_price[$name]);
 
     }
 

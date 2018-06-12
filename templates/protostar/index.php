@@ -169,39 +169,39 @@ else
     JHtml::_('script', 'jquery.responsiveTabs.min.js', array('version' => 'auto', 'relative' => true));
     JHtml::_('script', 'jquery.nouislider.all.js', array('version' => 'auto', 'relative' => true));
     JHtml::_('script', 'owl.carousel.min.js', array('version' => 'auto', 'relative' => true));
-    JHtml::_('script', 'tocca.js', array('version' => 'auto', 'relative' => true));
+//    JHtml::_('script', 'tocca.js', array('version' => 'auto', 'relative' => true));
     JHtml::_('script', 'slideout.js', array('version' => 'auto', 'relative' => true));
-    JHtml::_('script', 's3.shop2.fly.js', array('version' => 'auto', 'relative' => true));
-    JHtml::_('script', 's3.shop2.popup.js', array('version' => 'auto', 'relative' => true));
+//    JHtml::_('script', 's3.shop2.fly.js', array('version' => 'auto', 'relative' => true));
+//    JHtml::_('script', 's3.shop2.popup.js', array('version' => 'auto', 'relative' => true));
     JHtml::_('script', 'main.js', array('version' => 'auto', 'relative' => true));
-    JHtml::_('script', 'splitwords.js', array('version' => 'auto', 'relative' => true));
-    JHtml::_('script', 'site.min.js', array('version' => 'auto', 'relative' => true));
+//    JHtml::_('script', 'splitwords.js', array('version' => 'auto', 'relative' => true));
+//    JHtml::_('script', 'site.min.js', array('version' => 'auto', 'relative' => true));
     ?>
     <script src="https://cp.onicon.ru/loader/5953349b28668847218b45d5.js" type="text/javascript" data-auto async></script>
     <script type='text/javascript'>
-        hs.graphicsDir = '/shared/highslide-4.1.13/graphics/';
-        hs.outlineType = null;
-        hs.showCredits = false;
-        hs.lang={cssDirection:'ltr',loadingText:'Загрузка...',loadingTitle:'Кликните чтобы отменить',focusTitle:'Нажмите чтобы перенести вперёд',fullExpandTitle:'Увеличить',fullExpandText:'Полноэкранный',previousText:'Предыдущий',previousTitle:'Назад (стрелка влево)',nextText:'Далее',nextTitle:'Далее (стрелка вправо)',moveTitle:'Передвинуть',moveText:'Передвинуть',closeText:'Закрыть',closeTitle:'Закрыть (Esc)',resizeTitle:'Восстановить размер',playText:'Слайд-шоу',playTitle:'Слайд-шоу (пробел)',pauseText:'Пауза',pauseTitle:'Приостановить слайд-шоу (пробел)',number:'Изображение %1/%2',restoreTitle:'Нажмите чтобы посмотреть картинку, используйте мышь для перетаскивания. Используйте клавиши вперёд и назад'};</script>
+        //hs.graphicsDir = '/shared/highslide-4.1.13/graphics/';
+        //hs.outlineType = null;
+        //hs.showCredits = false;
+        //hs.lang={cssDirection:'ltr',loadingText:'Загрузка...',loadingTitle:'Кликните чтобы отменить',focusTitle:'Нажмите чтобы перенести вперёд',fullExpandTitle:'Увеличить',fullExpandText:'Полноэкранный',previousText:'Предыдущий',previousTitle:'Назад (стрелка влево)',nextText:'Далее',nextTitle:'Далее (стрелка вправо)',moveTitle:'Передвинуть',moveText:'Передвинуть',closeText:'Закрыть',closeTitle:'Закрыть (Esc)',resizeTitle:'Восстановить размер',playText:'Слайд-шоу',playTitle:'Слайд-шоу (пробел)',pauseText:'Пауза',pauseTitle:'Приостановить слайд-шоу (пробел)',number:'Изображение %1/%2',restoreTitle:'Нажмите чтобы посмотреть картинку, используйте мышь для перетаскивания. Используйте клавиши вперёд и назад'};</script>
     <!-- 46b9544ffa2e5e73c3c971fe2ede35a5 -->
 
     <script type='text/javascript'>/*<![CDATA[*/
-            widgets.addOnloadEvent(function() {
-            if (typeof jQuery == 'undefined') {
-                var s = document.createElement('script');
-                s.type = 'text/javascript';
-                s.src = '/shared/s3/js/jquery-1.7.2.min.js';
-                document.body.appendChild(s);
-            }
-        });
+        //     widgets.addOnloadEvent(function() {
+        //     if (typeof jQuery == 'undefined') {
+        //         var s = document.createElement('script');
+        //         s.type = 'text/javascript';
+        //         s.src = '/shared/s3/js/jquery-1.7.2.min.js';
+        //         document.body.appendChild(s);
+        //     }
+        // });
         /*]]>*/
     </script>
     <link rel="icon" href="http://kamni/templates/protostar/favicon.ico?1527570649" type="image/x-icon">
 
     <script>
-        $(function(){
+        /* $(function(){
             $.s3Shop2Popup();
-        });
+        }); */
     </script>
     <jdoc:include type="head" />
 
@@ -674,7 +674,6 @@ else
         </div>
         <div class="footer-bottom-area">
             <div class="max-width-wrapper">
-                <div class="site-copyright"><span style="font-size:10px;" class="copyright"><!--noindex--><a href="https://megagroup.ru" target="_blank" rel="nofollow"><img src="http://cp1.megagroup.ru/g/mlogo/svg/sozdanie-saitov-megagroup-ru-dark.svg" class="copyright"></a><!--/noindex--></span></div>
             </div>
         </div>
     </footer>
