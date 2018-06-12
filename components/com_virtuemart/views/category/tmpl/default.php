@@ -55,6 +55,11 @@ if ($this->show_store_desc and !empty($this->vendor->vendor_store_desc)) { ?>
 if (!empty($this->showcategory_desc) and empty($this->keyword)){
 	if(!empty($this->category)) {
 	?>
+        <div class="category_name">
+            <?php if (!empty($this->category->category_name)) { ?>
+                <h1><?php echo vmText::_($this->category->category_name); ?></h1>
+            <?php } ?>
+        </div>
 <div class="category_description">
 	<?php echo $this->category->category_description; ?>
 </div>
@@ -142,11 +147,86 @@ if(!empty($this->orderByList)) { ?>
 
 	<div class="clear"></div>
 </div> <!-- end of orderby-displaynumber -->
+
 <?php } ?>
 
-<?php if (!empty($this->category->category_name)) { ?>
-<h1><?php echo vmText::_($this->category->category_name); ?></h1>
-<?php } ?>
+    <div class="shop-sorting-panel">
+        <div class="sorting">
+            <div class="push_to_open_filter">Фильтр товаров</div>
+            <div class="title_sort">Сортировать по:</div>
+            <div class="body_sort">
+                <ul>
+                    <li><a class="sort-reset" href="#">Не сортировать</a></li>
+                    <li>
+                        <a class="shop2-sorting-price sort-param sort-param-asc" data-name="price" href="#">Цена
+                            <span class="arrow_icon">
+                                <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
+                                    <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="shop2-sorting-price sort-param sort-param-desc" data-name="price" href="#">Цена
+                            <span class="arrow_icon">                            <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
+                                <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                            </svg>
+                                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="shop2-sorting-name sort-param  sort-param-desc" data-name="name" href="#">Название
+                            <span class="arrow_icon">                            <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
+                                <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                            </svg>
+                                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="shop2-sorting-name sort-param sort-param-asc" data-name="name" href="#">Название
+                            <span class="arrow_icon">                            <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
+                                <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                            </svg>
+                                                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="view-sorting">
+            <div class="active_view view-sorting-thumbs">
+                <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="14" height="14" viewBox="0 0 14 14">
+                    <path d="M8.000,14.000 C8.000,14.000 8.000,8.000 8.000,8.000 C8.000,8.000 14.000,8.000 14.000,8.000 C14.000,8.000 14.000,14.000 14.000,14.000 C14.000,14.000 8.000,14.000 8.000,14.000 ZM8.000,-0.000 C8.000,-0.000 14.000,-0.000 14.000,-0.000 C14.000,-0.000 14.000,6.000 14.000,6.000 C14.000,6.000 8.000,6.000 8.000,6.000 C8.000,6.000 8.000,-0.000 8.000,-0.000 ZM-0.000,8.000 C-0.000,8.000 6.000,8.000 6.000,8.000 C6.000,8.000 6.000,14.000 6.000,14.000 C6.000,14.000 -0.000,14.000 -0.000,14.000 C-0.000,14.000 -0.000,8.000 -0.000,8.000 ZM-0.000,-0.000 C-0.000,-0.000 6.000,-0.000 6.000,-0.000 C6.000,-0.000 6.000,6.000 6.000,6.000 C6.000,6.000 -0.000,6.000 -0.000,6.000 C-0.000,6.000 -0.000,-0.000 -0.000,-0.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+            <div class="view-sorting-dropdown">
+                <a href="#" class="view_button grid active-view">
+                    <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="14" height="14" viewBox="0 0 14 14">
+                        <path d="M8.000,14.000 C8.000,14.000 8.000,8.000 8.000,8.000 C8.000,8.000 14.000,8.000 14.000,8.000 C14.000,8.000 14.000,14.000 14.000,14.000 C14.000,14.000 8.000,14.000 8.000,14.000 ZM8.000,-0.000 C8.000,-0.000 14.000,-0.000 14.000,-0.000 C14.000,-0.000 14.000,6.000 14.000,6.000 C14.000,6.000 8.000,6.000 8.000,6.000 C8.000,6.000 8.000,-0.000 8.000,-0.000 ZM-0.000,8.000 C-0.000,8.000 6.000,8.000 6.000,8.000 C6.000,8.000 6.000,14.000 6.000,14.000 C6.000,14.000 -0.000,14.000 -0.000,14.000 C-0.000,14.000 -0.000,8.000 -0.000,8.000 ZM-0.000,-0.000 C-0.000,-0.000 6.000,-0.000 6.000,-0.000 C6.000,-0.000 6.000,6.000 6.000,6.000 C6.000,6.000 -0.000,6.000 -0.000,6.000 C-0.000,6.000 -0.000,-0.000 -0.000,-0.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="view_button list">
+                    <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="14" height="14" viewBox="0 0 14 14">
+                        <path d="M-0.001,13.999 C-0.001,13.999 -0.001,7.999 -0.001,7.999 C-0.001,7.999 13.999,7.999 13.999,7.999 C13.999,7.999 13.999,13.999 13.999,13.999 C13.999,13.999 -0.001,13.999 -0.001,13.999 ZM-0.001,-0.001 C-0.001,-0.001 13.999,-0.001 13.999,-0.001 C13.999,-0.001 13.999,5.999 13.999,5.999 C13.999,5.999 -0.001,5.999 -0.001,5.999 C-0.001,5.999 -0.001,-0.001 -0.001,-0.001 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" title="Прайс-лист" data-value="list" class="view_button pricelist ">-->
+                    <svg class="icon_color" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="14"
+                         height="14" viewBox="0 0 14 14">
+                        <path d="M-0.001,13.999 C-0.001,13.999 -0.001,12.000 -0.001,12.000 C-0.001,12.000 13.999,12.000 13.999,12.000 C13.999,12.000 13.999,13.999 13.999,13.999 C13.999,13.999 -0.001,13.999 -0.001,13.999 ZM-0.001,7.999 C-0.001,7.999 13.999,7.999 13.999,7.999 C13.999,7.999 13.999,9.999 13.999,9.999 C13.999,9.999 -0.001,9.999 -0.001,9.999 C-0.001,9.999 -0.001,7.999 -0.001,7.999 ZM-0.001,4.000 C-0.001,4.000 13.999,4.000 13.999,4.000 C13.999,4.000 13.999,5.999 13.999,5.999 C13.999,5.999 -0.001,5.999 -0.001,5.999 C-0.001,5.999 -0.001,4.000 -0.001,4.000 ZM-0.001,-0.001 C-0.001,-0.001 13.999,-0.001 13.999,-0.001 C13.999,-0.001 13.999,1.999 13.999,1.999 C13.999,1.999 -0.001,1.999 -0.001,1.999 C-0.001,1.999 -0.001,-0.001 -0.001,-0.001 Z"
+                              id="path-1" class="cls-2" fill-rule="evenodd">
+
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
 
 	<?php
 	if (!empty($this->products)) {
@@ -182,3 +262,28 @@ if(VmConfig::get ('ajax_category', false)){
 }
 ?>
 <!-- end browse-view -->
+
+<script>
+    var productView = localStorage.getItem('productView');
+    if(productView == 'list'){
+        jQuery('.view-sorting-dropdown .grid').removeClass('active-view');
+        jQuery('.view-sorting-dropdown .list').addClass('active-view');
+        jQuery('.category-view .browse-view .product-list').removeClass('grid-view').addClass('list-view');
+    }
+    jQuery('.view-sorting-dropdown .grid').click(function(){
+        localStorage.removeItem('productView');
+        localStorage.setItem('productView', 'grid');
+        jQuery('.view-sorting-dropdown .list').removeClass('active-view');
+        jQuery(this).addClass('active-view');
+        jQuery('.category-view .browse-view .product-list').removeClass('list-view').addClass('grid-view');
+        return false;
+    });
+    jQuery('.view-sorting-dropdown .list').click(function(){
+        localStorage.removeItem('productView');
+        localStorage.setItem('productView', 'list');
+        jQuery('.view-sorting-dropdown .grid').removeClass('active-view');
+        jQuery(this).addClass('active-view');
+        jQuery('.category-view .browse-view .product-list').removeClass('grid-view').addClass('list-view');
+        return false;
+    });
+</script>

@@ -299,6 +299,14 @@ class VirtueMartControllerProductdetails extends JControllerLegacy {
 		} else {
 			jexit ();
 		}
+        $prices['basePrice'] = $prices['basePrice'] * $quantity;
+        $prices['basePriceWithTax'] = $prices['basePriceWithTax'] * $quantity;
+        $prices['discountedPriceWithoutTax'] = $prices['discountedPriceWithoutTax'] * $quantity;
+        $prices['salesPrice'] = $prices['salesPrice'] * $quantity;
+        $prices['salesPriceWithDiscount'] = $prices['salesPriceWithDiscount'] * $quantity;
+        $prices['taxAmount'] = $prices['taxAmount'] * $quantity;
+        $prices['discountAmount'] = $prices['discountAmount'] * $quantity;
+        $prices['basePriceWithTax'] = $prices['basePriceWithTax'] * $quantity;
 		$priceFormated = array();
 		if (!class_exists ('CurrencyDisplay')) {
 			require(VMPATH_ADMIN . DS . 'helpers' . DS . 'currencydisplay.php');

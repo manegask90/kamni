@@ -117,10 +117,10 @@ class mod_virtuemart_product {
 	}
 	
 	function productattrmanufacturerid($product_id) {
-		// Получаем объект базы данных.
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.
         $db = JFactory::getDBO();
  
-        // Конструируем SQL запрос.
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ SQL пїЅпїЅпїЅпїЅпїЅпїЅ.
         $query = $db->getQuery(true);
 		$query = "SELECT virtuemart_manufacturer_id FROM #__virtuemart_product_manufacturers WHERE virtuemart_product_id='".$product_id."'";
         $db->setQuery($query);

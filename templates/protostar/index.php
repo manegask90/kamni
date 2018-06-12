@@ -143,22 +143,47 @@ else
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="x-rim-auto-match" content="none">
-    <link rel="stylesheet" href="http://kamni/templates/protostar/css/styles_articles_tpl.css">
-    <script src="http://kamni/templates/protostar/js/jquery.min.js"></script>
-    <link rel='stylesheet' type='text/css' href='http://kamni/templates/protostar/css/highslide.min.css'/>
-    <script type='text/javascript' src='http://kamni/templates/protostar/js/highslide-full.packed.js'></script>
+    <?php
+    JHtml::_('stylesheet', 'styles_articles_tpl.css', array('version' => 'auto', 'relative' => true));
+    JHtml::_('stylesheet', 'highslide.min.css', array('version' => 'auto', 'relative' => true));
+    JHtml::_('stylesheet', 'calendar.css', array('version' => 'auto', 'relative' => true));
+    JHtml::_('stylesheet', 'theme.less.css', array('version' => 'auto', 'relative' => true));
+    JHtml::_('stylesheet', 'theme.scss.css', array('version' => 'auto', 'relative' => true));
+    JHtml::_('stylesheet', 'bdr_style.scss.css', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'jquery.min.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'highslide-full.packed.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'flowplayer-3.2.9.min.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'ru.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'cookie.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'widgets.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'calendar.packed.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'printme.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'tpl.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'baron.min.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'shop2.2_new.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 's3.includeform.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'jquery.bxslider.min.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'animit.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'jquery.formstyler.min.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'jquery.waslidemenu.min.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'jquery.responsiveTabs.min.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'jquery.nouislider.all.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'owl.carousel.min.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'tocca.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'slideout.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 's3.shop2.fly.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 's3.shop2.popup.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'main.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'splitwords.js', array('version' => 'auto', 'relative' => true));
+    JHtml::_('script', 'site.min.js', array('version' => 'auto', 'relative' => true));
+    ?>
+    <script src="https://cp.onicon.ru/loader/5953349b28668847218b45d5.js" type="text/javascript" data-auto async></script>
     <script type='text/javascript'>
         hs.graphicsDir = '/shared/highslide-4.1.13/graphics/';
         hs.outlineType = null;
         hs.showCredits = false;
         hs.lang={cssDirection:'ltr',loadingText:'Загрузка...',loadingTitle:'Кликните чтобы отменить',focusTitle:'Нажмите чтобы перенести вперёд',fullExpandTitle:'Увеличить',fullExpandText:'Полноэкранный',previousText:'Предыдущий',previousTitle:'Назад (стрелка влево)',nextText:'Далее',nextTitle:'Далее (стрелка вправо)',moveTitle:'Передвинуть',moveText:'Передвинуть',closeText:'Закрыть',closeTitle:'Закрыть (Esc)',resizeTitle:'Восстановить размер',playText:'Слайд-шоу',playTitle:'Слайд-шоу (пробел)',pauseText:'Пауза',pauseTitle:'Приостановить слайд-шоу (пробел)',number:'Изображение %1/%2',restoreTitle:'Нажмите чтобы посмотреть картинку, используйте мышь для перетаскивания. Используйте клавиши вперёд и назад'};</script>
-    <script type='text/javascript' src='http://kamni/templates/protostar/js/flowplayer-3.2.9.min.js'></script>
     <!-- 46b9544ffa2e5e73c3c971fe2ede35a5 -->
-    <link rel='stylesheet' type='text/css' href='http://kamni/templates/protostar/css/calendar.css' />
-    <script type='text/javascript' src='http://kamni/templates/protostar/js/ru.js'></script>
-    <script type='text/javascript' src='http://kamni/templates/protostar/js/cookie.js'></script>
-    <script type='text/javascript' src='http://kamni/templates/protostar/js/widgets.js?v=8'></script>
-    <script type='text/javascript' src='http://kamni/templates/protostar/js/calendar.packed.js'></script>
 
     <script type='text/javascript'>/*<![CDATA[*/
             widgets.addOnloadEvent(function() {
@@ -172,36 +197,6 @@ else
         /*]]>*/
     </script>
     <link rel="icon" href="http://kamni/templates/protostar/favicon.ico?1527570649" type="image/x-icon">
-
-
-
-
-
-    <link rel="stylesheet" type="text/css" href="http://kamni/templates/protostar/css/theme.less.css"><script type="text/javascript" src="http://kamni/templates/protostar/js/printme.js"></script>
-    <script type="text/javascript" src="http://kamni/templates/protostar/js/tpl.js"></script>
-    <script type="text/javascript" src="http://kamni/templates/protostar/js/baron.min.js"></script>
-    <script type="text/javascript" src="http://kamni/templates/protostar/js/shop2.2_new.js"></script>
-
-    <link rel="stylesheet" href="http://kamni/templates/protostar/css/theme.scss.css">
-
-    <link rel="stylesheet" href="http://kamni/templates/protostar/css/bdr_style.scss.css">
-
-    <script src="http://kamni/templates/protostar/js/s3.includeform.js"></script>
-    <script src="http://kamni/templates/protostar/js/jquery.bxslider.min.js"></script>
-    <script src="http://kamni/templates/protostar/js/animit.js"></script>
-    <script src="http://kamni/templates/protostar/js/jquery.formstyler.min.js"></script>
-    <script src="http://kamni/templates/protostar/js/jquery.waslidemenu.min.js"></script>
-    <script src="http://kamni/templates/protostar/js/jquery.responsiveTabs.min.js"></script>
-    <script src="http://kamni/templates/protostar/js/jquery.nouislider.all.js"></script>
-    <script src="http://kamni/templates/protostar/js/owl.carousel.min.js"></script>
-    <script src="http://kamni/templates/protostar/js/tocca.js"></script>
-    <script src="http://kamni/templates/protostar/js/slideout.js"></script>
-
-    <script src="http://kamni/templates/protostar/js/s3.shop2.fly.js"></script>
-    <script src="http://kamni/templates/protostar/js/s3.shop2.popup.js"></script>
-
-    <script src="http://kamni/templates/protostar/js/main.js" charset="utf-8"></script>
-
 
     <script>
         $(function(){
@@ -684,11 +679,7 @@ else
         </div>
     </footer>
 </div> <!-- .site-wrapper -->
-<script src="http://kamni/templates/protostar/js/splitwords.js"></script>
 
-<!-- assets.bottom -->
-<script src="http://kamni/templates/protostar/js/site.min.js?1526302737" type="text/javascript" ></script>
-<script src="https://cp.onicon.ru/loader/5953349b28668847218b45d5.js" type="text/javascript" data-auto async></script>
 <script type="text/javascript" >/*<![CDATA[*/
     $ite.start({"sid":1699368,"vid":1709126,"aid":2015843,"cp":15,"active":"0","domain":"dyhanie-kamnya.ru","lang":"ru","trusted":false,"debug":false});
     /*]]>*/</script>

@@ -89,17 +89,20 @@ if (!VmConfig::get('use_as_catalog', 0)  ) { ?>
 			if ($product->orderable) {
 				$editable = 'text';
 			} ?>
-            <!-- <label for="quantity<?php echo $product->virtuemart_product_id; ?>" class="quantity_box"><?php echo vmText::_ ('COM_VIRTUEMART_CART_QUANTITY'); ?>: </label> -->
-            <span class="quantity-box">
-				<input type="<?php echo $editable ?>" class="quantity-input js-recalculate" name="quantity[]"
-                       data-errStr="<?php echo vmText::_ ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED')?>"
-                       value="<?php echo $init; ?>" init="<?php echo $init; ?>" step="<?php echo $step; ?>" <?php echo $maxOrder; ?> />
-			</span>
-			<?php if ($product->orderable) { ?>
-                <span class="quantity-controls js-recalculate">
-				<input type="button" class="quantity-controls quantity-plus"/>
-				<input type="button" class="quantity-controls quantity-minus"/>
-			</span>
+<!--            <label for="quantity--><?php //echo $product->virtuemart_product_id; ?><!--" class="quantity_box">Количество: </label>-->
+            <div class="product-amount">
+            <div class="amount-title">Количество:</div>
+            <div class="shop-product-amount">
+            <?php echo $product->prices['salesPrice']; ?>
+            <?php if ($product->orderable) { ?>
+                    <button type="button" class="quantity-controls quantity-minus amount-minus">-</button>
+                    <input type="<?php echo $editable ?>" class="quantity-input js-recalculate" name="quantity[]"
+                           data-errStr="<?php echo vmText::_('COM_VIRTUEMART_WRONG_AMOUNT_ADDED') ?>"
+                           value="<?php echo $init; ?>" init="<?php echo $init; ?>"
+                           step="<?php echo $step; ?>" <?php echo $maxOrder; ?> />
+                    <button type="button" class="quantity-controls quantity-plus amount-plus">+</button>
+                </div>
+                </div>
 			<?php }
 
 			if(!empty($addtoCartButton)){

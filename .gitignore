@@ -2,7 +2,6 @@
 ### Joomla template
 /.htaccess
 .idea/
-administrator/
 /administrator/cache/*
 /administrator/components/com_admin/*
 /administrator/components/com_ajax/*
@@ -254,29 +253,6 @@ administrator/
 /administrator/language/en-GB/en-GB.tpl_hathor.sys.ini
 /administrator/language/en-GB/en-GB.xml
 /administrator/language/overrides/*
-/administrator/logs/*
-/administrator/manifests/*
-/administrator/modules/mod_custom/*
-/administrator/modules/mod_feed/*
-/administrator/modules/mod_latest/*
-/administrator/modules/mod_logged/*
-/administrator/modules/mod_login/*
-/administrator/modules/mod_menu/*
-/administrator/modules/mod_multilangstatus/*
-/administrator/modules/mod_online/*
-/administrator/modules/mod_popular/*
-/administrator/modules/mod_quickicon/*
-/administrator/modules/mod_status/*
-/administrator/modules/mod_submenu/*
-/administrator/modules/mod_title/*
-/administrator/modules/mod_toolbar/*
-/administrator/modules/mod_unread/*
-/administrator/modules/mod_version/*
-/administrator/modules/mod_stats_admin/*
-/administrator/templates/isis/*
-/administrator/templates/hathor/*
-/administrator/templates/system/*
-/administrator/index.php
 /cache/*
 /bin/*
 /cli/*

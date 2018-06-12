@@ -451,3 +451,31 @@ p {
 .itemid-101 .slider-wrap {
     display: block;
 }
+/*.product-view-button a {*/
+    /*fill: #84846e;*/
+/*}*/
+/*.product-view-button a.active{*/
+    /*fill: #428bca;*/
+/*}*/
+
+
+.list-view .product,
+.list-view .spacer{
+    width: 100%;
+}
+.list-view .spacer .vm-product-media-container{
+    width: 20%;
+    float: left;
+}
+.list-view .spacer .vm-product-descr-container{
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+.list-view .spacer .vm-product-descr-container .vm-product-rating-container span{
+    float: left;
+}
+.list-view .spacer .vm-product-detail-container{
+    width: 30%;
+    float: left;
+}
