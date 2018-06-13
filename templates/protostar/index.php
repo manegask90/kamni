@@ -679,11 +679,6 @@ else
     </footer>
 </div> <!-- .site-wrapper -->
 
-<script type="text/javascript" >/*<![CDATA[*/
-    $ite.start({"sid":1699368,"vid":1709126,"aid":2015843,"cp":15,"active":"0","domain":"dyhanie-kamnya.ru","lang":"ru","trusted":false,"debug":false});
-    /*]]>*/</script>
-<!-- /assets.bottom -->
-
 </body>
 <!-- ID -->
 </html>

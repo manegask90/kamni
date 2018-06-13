@@ -510,3 +510,9 @@ p {
     width: 40%;
     display: inline-block;
 }
+.list-view .shop2-product-item {
+    min-height: auto !important;
+}
+.product-pricelist .product-top {
+    min-height: auto !important;
+}
