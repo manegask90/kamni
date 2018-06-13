@@ -150,7 +150,7 @@ else
     JHtml::_('stylesheet', 'theme.less.css', array('version' => 'auto', 'relative' => true));
     JHtml::_('stylesheet', 'theme.scss.css', array('version' => 'auto', 'relative' => true));
     JHtml::_('stylesheet', 'bdr_style.scss.css', array('version' => 'auto', 'relative' => true));
-    JHtml::_('script', 'jquery.min.js', array('version' => 'auto', 'relative' => true));
+//    JHtml::_('script', 'jquery.min.js', array('version' => 'auto', 'relative' => true));
     JHtml::_('script', 'highslide-full.packed.js', array('version' => 'auto', 'relative' => true));
     JHtml::_('script', 'flowplayer-3.2.9.min.js', array('version' => 'auto', 'relative' => true));
     JHtml::_('script', 'ru.js', array('version' => 'auto', 'relative' => true));
