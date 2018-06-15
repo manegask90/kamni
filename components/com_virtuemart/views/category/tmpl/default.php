@@ -136,19 +136,23 @@ jQuery(".changeSendForm")
 if(!empty($this->orderByList)) { ?>
 <div class="orderby-displaynumber">
 	<div class="floatleft vm-order-list">
-		<?php echo $this->orderByList['orderby']; ?>
+		<?php //echo $this->orderByList['orderby']; ?>
 		<?php echo $this->orderByList['manufacturer']; ?>
-	</div>
+
+        <?php
+        $app = JFactory::getApplication('site');
+        $orderby = $app->input->getCmd('orderby', '');
+        $dir = $app->input->getCmd('dir', 'ASC');
+        ?>
 	<div class="vm-pagination vm-pagination-top">
 		<?php echo $this->vmPagination->getPagesLinks (); ?>
 		<span class="vm-page-counter"><?php echo $this->vmPagination->getPagesCounter (); ?></span>
 	</div>
-	<div class="floatright display-number"><?php echo $this->vmPagination->getResultsCounter ();?><br/><?php echo $this->vmPagination->getLimitBox ($this->category->limit_list_step); ?></div>
+<!--	<div class="floatright display-number">--><?php //echo $this->vmPagination->getResultsCounter ();?><!--<br/>--><?php //echo $this->vmPagination->getLimitBox ($this->category->limit_list_step); ?><!--</div>-->
 
 	<div class="clear"></div>
 </div> <!-- end of orderby-displaynumber -->
 
-<?php } ?>
 
     <div class="shop-sorting-panel">
         <div class="sorting">
@@ -156,18 +160,9 @@ if(!empty($this->orderByList)) { ?>
             <div class="title_sort">Сортировать по:</div>
             <div class="body_sort">
                 <ul>
-                    <li><a class="sort-reset" href="#">Не сортировать</a></li>
+<!--                    <li><a class="sort-reset" href="#">Не сортировать</a></li>-->
                     <li>
-                        <a class="shop2-sorting-price sort-param sort-param-asc" data-name="price" href="#">Цена
-                            <span class="arrow_icon">
-                                <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
-                                    <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
-                                </svg>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="shop2-sorting-price sort-param sort-param-desc" data-name="price" href="#">Цена
+                        <a class="shop2-sorting-price sort-param sort-param-asc" data-name="price" href="<?php echo JRoute::_ ($fieldLink . '&orderby=product_price&dir=DESC',FALSE);?>" <?php if($orderby == 'product_price' && $dir == 'DESC'){ echo 'selected="selected"'; } ?>">Цена
                             <span class="arrow_icon">                            <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
                                 <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
                             </svg>
@@ -175,7 +170,7 @@ if(!empty($this->orderByList)) { ?>
                         </a>
                     </li>
                     <li>
-                        <a class="shop2-sorting-name sort-param  sort-param-desc" data-name="name" href="#">Название
+                        <a class="shop2-sorting-price sort-param sort-param-desc" data-name="price" href="<?php echo JRoute::_ ($fieldLink . '&orderby=product_price&dir=ASC',FALSE);?>" <?php if($orderby == 'product_price' && $dir == 'ASC'){ echo 'selected="selected"'; } ?>">Цена
                             <span class="arrow_icon">                            <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
                                 <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
                             </svg>
@@ -183,7 +178,15 @@ if(!empty($this->orderByList)) { ?>
                         </a>
                     </li>
                     <li>
-                        <a class="shop2-sorting-name sort-param sort-param-asc" data-name="name" href="#">Название
+                        <a class="shop2-sorting-name sort-param  sort-param-desc" data-name="name" href="<?php echo JRoute::_ ($fieldLink . '&orderby=product_name&dir=ASC',FALSE);?>" <?php if($orderby == 'product_name' && $dir == 'ASC'){ echo 'selected="selected"'; } ?>">Название
+                            <span class="arrow_icon">                            <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
+                                <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
+                            </svg>
+                                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="shop2-sorting-name sort-param sort-param-asc" data-name="name" href="<?php echo JRoute::_ ($fieldLink . '&orderby=product_name&dir=DESC',FALSE);?>" <?php if($orderby == 'product_name' && $dir == 'DESC'){ echo 'selected="selected"'; } ?>">Название
                             <span class="arrow_icon">                            <svg class="icon_color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="10" height="13" viewBox="0 0 10 13">
                                 <path d="M7.000,5.000 C7.000,5.000 7.000,13.000 7.000,13.000 C7.000,13.000 3.000,13.000 3.000,13.000 C3.000,13.000 3.000,5.000 3.000,5.000 C3.000,5.000 -0.000,5.000 -0.000,5.000 C-0.000,5.000 5.000,-0.000 5.000,-0.000 C5.000,-0.000 9.999,5.000 9.999,5.000 C9.999,5.000 7.000,5.000 7.000,5.000 Z" id="path-1" class="cls-2" fill-rule="evenodd"></path>
                             </svg>
@@ -225,7 +228,7 @@ if(!empty($this->orderByList)) { ?>
         </div>
     </div>
 
-
+    <?php } ?>
 
 
 	<?php
